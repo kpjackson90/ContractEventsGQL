@@ -1,0 +1,29 @@
+version: '3'
+services:
+  api:
+    build:
+      dockerfile: Dockerfile
+      context: ./
+    volumes:
+      - .:/usr/app
+    ports:
+      - '4000:4000'
+    environment:
+      WEB3_PROVIDER: 'wss://mainnet.infura.io/ws/v3/cc77f7e53cb24e1498b37bbed4007582'
+      CONTRACT_ADDRESS: '0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D'
+      DATABASE_HOST: 'host.docker.internal'
+      DATABASE_PORT: 5432
+      DATABASE_USERNAME: 'postgres'
+      DATABASE_PASSWORD: 'yourpassword'
+      DATABASE_TABLE: 'transfers'
+  postgres:
+    image: postgres:10.5
+    restart: always
+    environment:
+      POSTGRES_USER: 'postgres'
+      POSTGRES_PASSWORD: 'yourpassword'
+    ports:
+      - '5438:5432'
+    volumes:
+      - ./postgres-data:/var/lib/postgresql/data
+      - ./src/db/db_create.sql:/docker-entrypoint-initdb.d/db_create.sql
