@@ -1,5 +1,7 @@
 NFT.com Backend
 
+Live GraphQL Link:- http://nftcom-env.eba-4d57f7ab.us-east-1.elasticbeanstalk.com/graphql
+
 To Run Application:
 
 create a .env file and add the following variables:
