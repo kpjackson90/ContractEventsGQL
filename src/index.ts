@@ -40,7 +40,7 @@ const start = async () => {
   if (!process.env.DATABASE_TABLE) {
     throw new Error('DATABASE_TABLE must be defined');
   }
-  console.log(process.env.DATABASE_TABLE);
+
   let connection: Connection;
 
   try {

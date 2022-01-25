@@ -1,0 +1,13 @@
+{
+  "AWSEBDockerrunVersion": "1",
+  "Image": {
+    "Name": "kpjackson27/nft.com",
+    "Update": "true"
+  },
+  "Ports": [
+    {
+      "HostPort": "8080",
+      "ContainerPort": "4000"
+    }
+  ]
+}
