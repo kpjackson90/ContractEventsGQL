@@ -31,6 +31,8 @@ Run the following commands to start server
 
 Once server is up and running, go to localhost:4000/graphql in your browser, to test graphql queries
 
+Note:- When using the `getEventByTokenId` query, use the `return_value_token_id` that is present on the `EventType` as the value for the tokenId argument.
+
 Future enhancements:
 
 - Automated testing
